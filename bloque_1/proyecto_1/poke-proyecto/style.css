@@ -1,0 +1,108 @@
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: rgb(243, 220, 73);
+  background-image: linear-gradient(
+    rgba(255, 255, 255, 0.5),  
+    rgba(255, 255, 255, 0.5)
+  ),  url('C:\Users\Pienso\Documents\NEOLAND\bloque_1\proyecto_1\poke-proyecto\fondo_logo.png'); 
+  background-repeat: repeat; 
+  background-size: 150px 120px ; 
+  background-position: 0 120px; 
+  background-attachment: fixed;
+  opacity: 1; 
+  z-index: -1; 
+  margin: 0;
+  display: flex;
+  justify-content: center;
+}
+
+
+#app {
+  max-width: 800px;
+  width: 100%;
+  padding: 20px;
+}
+
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+#search {
+  padding: 8px;
+  width: 200px;
+  font-size: 16px;
+  border-radius: 8px;
+  text-align: center;
+  border: 5.50px solid #3b4cca;
+}
+
+#type-filter {
+  padding: 8px;
+  font-size: 16px;
+}
+
+main {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.card {
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  transition: transform 0.3s;
+  background-color: white;
+  border: 5.50px solid #3b4cca;
+}
+
+.card img {
+  max-width: 100%;
+  height: auto;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  background-color: #ffbf36;
+}
+
+.resultado-card {
+  margin-top: 125px;
+  background-color: greenyellow;
+}
+
+.resultado-card.card:hover {
+  transform: scale (a.05);
+  background-color: greenyellow;
+
+}
+
+
+
+#pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.pagination-button {
+  padding: 10px;
+  margin: 5px;
+  cursor: pointer;
+  border: 1px solid #ddd;
+  background-color: #f0f0f0;
+  border-radius: 4px;
+}
+
+.pagination-button.active {
+  background-color: #0073e6;
+  color: white;
+}
+
+
+

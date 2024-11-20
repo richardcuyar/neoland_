@@ -1,0 +1,116 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+
+
+  html {
+    height: 100%;
+    font-family: "Roboto", sans-serif;
+    background: linear-gradient(
+      135deg,
+      #f0e773,
+      #f3a108
+    ); 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+  }
+  
+  .login-box {
+    background-color: white;
+    padding: 40px 70px;
+    border-radius: 150px ;
+    border: 5.50px solid #3b4cca;    
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); 
+    max-width: 400px; 
+    width: 100%;
+    text-align: center;
+  }
+  
+  h1 {
+    font-size: 26px;
+    margin-bottom: 25px;
+    font-weight: 500;
+    color: #333; 
+  }
+  
+  input {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid #1488e7;
+    border-radius: 10px;
+    font-size: 16px;
+    background-color: #e3f3f0;
+    color: #333;
+    transition: border-color 0.2s ease;
+  }
+  
+  input:focus {
+    border-color: #74ebd5; 
+    outline: none;
+  }
+  
+  button {
+    background-color: #0f3d94; 
+    color: white;
+    border: none;
+    padding: 15px;
+    border-radius: 10px;
+    font-size: 16px;
+    width: 100%;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin-top: 15px;
+  }
+  
+  button:hover {
+    background-color: #2f6559; 
+    transform: translateY(-3px); 
+  }
+  
+  #error-message {
+    color: #ff4d4d; 
+    font-size: 14px;
+    margin-top: 10px;
+    display: none;
+  }
+  
+  .extra-options {
+    font-size: 14px;
+    color: #666;
+    margin-top: 10px;
+  }
+  
+  .extra-options a {
+    color: #2f4b65;
+    text-decoration: none;
+  }
+  
+  .extra-options a:hover {
+    color: #2f4b65;
+  }
+
+  .logotipo {    
+    position: relative;
+    right: -45px;
+  }
+
+  .player {
+    position: relative;
+    right: -35px;
+    margin-top: 50px;
+
+  }
