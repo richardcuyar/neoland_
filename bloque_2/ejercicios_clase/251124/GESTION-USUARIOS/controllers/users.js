@@ -31,7 +31,7 @@ const listarUsuario =(req, res)=>{
     res.send('Usuario no encontrado')
 }
 
-const guardarUsuarios=(usuarios)=>{
+const escribirUsuarios=(usuarios)=>{
     const data = fs.writeFileSync(usuariosPath, JSON.stringify(usuarios))
     console.log(data)
 }
@@ -39,10 +39,10 @@ const guardarUsuarios=(usuarios)=>{
 const crearUsuario = (req, res)=>{
     const usuarios = leerUsuarios()
     const newUser = req.body //{"nombre": "Carlos Gómez", "email": "carlos.gomez@example.com"}
-    newUser.id = usuarios.lenght + 
-    newUser // {id:4, "nombre": "Carlos Gómez", "email": "carlos.gomez@example.com"}
+    newUser.id = usuarios.lenght + 1
+    // newUser // {id:4, "nombre": "Carlos Gómez", "email": "carlos.gomez@example.com"}
     usuarios.push(newUser)
-    guardarUsuarios(usuarios)
+    escribirUsuarios(usuarios)
     res.status(200).json(newUser)
 
 }
@@ -60,7 +60,7 @@ const actualizarUsuario =(req, res)=>{
 
 
     usuarios[index] = {...usuarios [index], ...newInfoUser }
-guardarUsuarios(usuarios)
+escribirUsuarios(usuarios)
 
 res.status(200).json(usuarios[index])
 
@@ -73,7 +73,7 @@ const eliminarUser =(req, res)=>{
     if(usersFiltered.lenght === usuarios.lenght){  // que el id no existe en nuestros usuarios
         return res.status(404).json({error: 'Usuario no encontrado'})
     }
-    guardarUsuarios(usersFiltered)
+    escribirUsuarios(usersFiltered)
     res.status(200).send()
 
 
