@@ -1,15 +1,17 @@
-const express = require ('express')
+const express = require('express'); // Importamos Express
+const router = express.Router(); // Creamos un enrutador
 
-const router = express.Router()
+// Importamos los controladores de productos
+const { listarProductos, agregarProducto, eliminarProducto, listarProducto, actualizarProducto } = require('../controllers/products');
 
-const {listarProductos, agregarProducto, eliminarProducto, listarProducto, actualizarProducto} = require ('../controllers/products')
-const validarProducto = require ('../middleware/productoMiddleware')
+// Importamos el middleware para validar productos
+const validarProducto = require('../middleware/productoMiddleware');
 
+// Rutas para productos
+router.get('/', listarProductos); // Endpoint para listar todos los productos
+router.get('/:id', listarProducto); // Endpoint para listar un producto por ID
+router.post('/', validarProducto, agregarProducto); // Endpoint para agregar un producto (con validación)
+router.put('/:id', validarProducto, actualizarProducto); // Endpoint para actualizar un producto por ID (con validación)
+router.delete('/:id', eliminarProducto); // Endpoint para eliminar un producto por ID
 
-router.get('/', listarProductos)
-router.get('/:id', listarProducto)
-router.put('/:id', validarProducto, actualizarProducto)
-router.post('/', validarProducto, agregarProducto)
-router.delete('/:id', eliminarProducto)
-
-module.exports = router
+module.exports = router; // Exportamos el enrutador
